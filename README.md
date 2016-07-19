@@ -12,6 +12,7 @@
 When an error occured, HTTP Status Code is 404,422,500.
 
 Layout of error:
+
 ```{
         'msg':'error message'
     }
@@ -35,7 +36,7 @@ Layout of error:
 ***
 # **Get books list**
 
-'`GET localhost:3000/books`
+`GET localhost:3000/books`
 
 Return books list, status=200
 
@@ -63,6 +64,7 @@ Return books list, status=200
 
 ***
 # **Get a book message**
+
 `GET  /books/:id`
 
 Return a book's information,status=200
@@ -81,11 +83,13 @@ Return a book's information,status=200
 
 ***
 # **Post a new book**
+
 `POST localhost:3000/books`
 
 Create a new book, status=201
 
 Parameters information:
+
  ```{
        book[name]:Rail之道
        book[isbn]:4727011
@@ -98,11 +102,13 @@ Parameters information:
 
 ***
 # **Edit a book**
+
 `PUT localhost:3000/books/:id`
 
 Edit a book, status=202
 
 Parameters information:
+
  ```{
        book[name]:Rail之道
        book[isbn]:4727011
