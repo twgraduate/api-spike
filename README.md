@@ -13,8 +13,8 @@ When an error occured, HTTP Status Code is 404,422,500.
 
 Layout of error:
 
-```{
-        'msg':'error message'
+``` {
+    'msg':'error message'
     }
 ```
 
@@ -79,7 +79,7 @@ Return a book's information,status=200
     "img_url": "https://img3.doubanio.com/mpic/s2370875.jpg",
     "description": "《Programming Rudy》(中文版)(第2版)是……"
     }
- ```
+```
 
 ***
 # **Post a new book**
@@ -90,15 +90,16 @@ Create a new book, status=201
 
 Parameters information:
 
- ```{
-       book[name]:Rail之道
-       book[isbn]:4727011
-       book[author]:(美)Obie Fernandez
-       book[price]:89
-       book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
-       book[description]:《Rails之道》按照Rails的各...
-    }
- ```
+```
+{
+   book[name]:Rail之道
+   book[isbn]:4727011
+   book[author]:(美)Obie Fernandez
+   book[price]:89
+   book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
+   book[description]:《Rails之道》按照Rails的各...
+}
+```
 
 ***
 # **Edit a book**
@@ -109,7 +110,8 @@ Edit a book, status=202
 
 Parameters information:
 
- ```{
+ ```
+    {
        book[name]:Rail之道
        book[isbn]:4727011
        book[author]:(美)Obie Fernandez
