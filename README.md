@@ -1,10 +1,10 @@
 # **API Basic**
 
-* Get all books information list:                 GET       /books
-* Read a book detailed information by book i      GET       /books/:id
-* Add a book to the list                          POST      /book
-* Edit detail information by book id              PUT       /book/:id
-* Delete book information by book id              DELETE    /book/:id
+* Get all books information list:                  GET       /books
+* Read a book detailed information by book i:      GET       /books/:id
+* Add a book to the list:                          POST      /book
+* Edit detail information by book id:              PUT       /book/:id
+* Delete book information by book id:              DELETE    /book/:id
 
 ***
 # **API error**
