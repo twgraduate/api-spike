@@ -29,7 +29,7 @@ Layout of error:
 |Isbn should be unique                  |    422            |The book you POST or PUT has the same ISBN with other books in SQL
 
 ***
-# *Get books list*
+# **Get books list**
 '`GET localhost:3000/books`
 Return books list, status=200
  ```[
@@ -55,7 +55,7 @@ Return books list, status=200
  ```
 
 ***
-# *Get a book message*
+# **Get a book message**
 `GET  /books/:id`
 Return a book's information,status=200
 ```
@@ -71,7 +71,7 @@ Return a book's information,status=200
  ```
 
 ***
-# *Post a new book*
+# **Post a new book**
 `POST localhost:3000/books`
 Create a new book, status=201
 Parameters information:
@@ -86,7 +86,7 @@ Parameters information:
  ```
 
 ***
-# *Edit a book*
+# **Edit a book**
 `PUT localhost:3000/books/:id`
 Edit a book, status=202
 Parameters information:
@@ -101,7 +101,7 @@ Parameters information:
  ```
 
 ***
-# *Destroy a book*
+# **Destroy a book**
 `DELETE localhost:3000/books/:id`
 Delete a book, status=200
 
