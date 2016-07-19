@@ -27,12 +27,12 @@ Layout of error:
 |Error Message                          |Status Code        |     Error describe
 |---------------------------------------|:-----------------:|-------------------------------------------------------------------------
 |Book not found                         |    404            | {:id} don't refers to any book
-|Exception                              |    500            | Other error
-|Book name can't be empty               |    422            | The book name in your parameters is empty
+|Book name can't be empty               |    422            | {book[name]} in your parameters is empty
 |Name&&author can't be same at same time|    422            | The book you POST or PUT has the same name and author with books in SQL
-|Author can't be empty                  |    422            | The book author in your parameters is empty
-|Isbn can't be empty                    |    422            | The book isbn in your parameters is empty
+|Author can't be empty                  |    422            | {book[author]} in your parameters is empty
+|Isbn can't be empty                    |    422            | {book[isbn]} in your parameters is empty
 |Isbn should be unique                  |    422            |The book you POST or PUT has the same ISBN with other books in SQL
+|Exception                              |    500            | Other error
 
 ***
 # **Get books list**
