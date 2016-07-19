@@ -13,7 +13,8 @@ When an error occured, HTTP Status Code is 404,422,500.
 
 Layout of error:
 
-``` {
+```
+    {
     'msg':'error message'
     }
 ```
@@ -40,7 +41,8 @@ Layout of error:
 
 Return books list, status=200
 
- ```[
+ ```
+    [
     {
       "id": 1,
       "name": "Rails之道",
