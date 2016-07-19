@@ -1,4 +1,4 @@
-# *API Basic*
+# **API Basic**
 * Get all books information list:                 GET       /books
 * Read a book detailed information by book i      GET       /books/:id
 * Add a book to the list                          POST      /book
@@ -6,12 +6,13 @@
 * Delete book information by book id              DELETE    /book/:id
 
 ***
-# *API error*
+# **API error**
 When an error occured, HTTP Status Code is 404,422,500.
 Layout of error:
-    {
+ ```{
         'msg':'error message'
     }
+ ```
 * 404:  Book not found;
 * 422:  Some parameters are illegal, book entity is unprocessable;
 * 500:  other error
@@ -29,9 +30,9 @@ Layout of error:
 
 ***
 # *Get books list*
-'GET localhost:3000/books'
+'`GET localhost:3000/books`
 Return books list, status=200
-    [
+ ```[
     {
       "id": 1,
       "name": "Rails之道",
@@ -51,11 +52,13 @@ Return books list, status=200
       "description": "《Programming Rudy》(中文版)(第2版)是它的第2版，其中包括超过200页的新内容，以及对原有内容的修订，涵盖了Ruby 1．8中新的和改进的特性以及标准库模块。它不仅是您学习Ruby语言及其丰富特性的一本优秀教程，也可以作为日常编程时类和模块的参考手册。Ruby是一种跨平台、面向对象的动态类型编程语言。Ruby体现了表达的一致性和简单性，它不仅是一门编程语言，更是表达想法的一种简练方式。它不仅受到广大程序员的欢迎，无数的软件大师亦为其倾倒。Programming Rubyr是关于Ruby语言的一本权威著作，也被称为PickAxe Book(镐头书，由封面上的工具得名)。"
     }
     ]
+ ```
 
 ***
 # *Get a book message*
-'GET  /books/:id'
+`GET  /books/:id`
 Return a book's information,status=200
+```
     {
     "id": 2,
     "name": "Programming Ruby中文版",
@@ -65,13 +68,14 @@ Return a book's information,status=200
     "img_url": "https://img3.doubanio.com/mpic/s2370875.jpg",
     "description": "《Programming Rudy》(中文版)(第2版)是……"
     }
+ ```
 
 ***
 # *Post a new book*
-'POST localhost:3000/books'
+`POST localhost:3000/books`
 Create a new book, status=201
 Parameters information:
-    {
+ ```{
        book[name]:Rail之道
        book[isbn]:4727011
        book[author]:(美)Obie Fernandez
@@ -79,13 +83,14 @@ Parameters information:
        book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
        book[description]:《Rails之道》按照Rails的各...
     }
+ ```
 
 ***
 # *Edit a book*
-    'PUT localhost:3000/books/:id'
+`PUT localhost:3000/books/:id`
 Edit a book, status=202
 Parameters information:
-    {
+ ```{
        book[name]:Rail之道
        book[isbn]:4727011
        book[author]:(美)Obie Fernandez
@@ -93,10 +98,11 @@ Parameters information:
        book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
        book[description]:《Rails之道》按照Rails的各...
     }
+ ```
 
 ***
 # *Destroy a book*
-'DELETE localhost:3000/books/:id'
+`DELETE localhost:3000/books/:id`
 Delete a book, status=200
 
 
