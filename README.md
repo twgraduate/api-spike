@@ -10,6 +10,7 @@
 # **API error**
 
 When an error occured, HTTP Status Code is 404,422,500.
+
 Layout of error:
 
 ```
@@ -88,6 +89,7 @@ Return a book's information,status=200
 `POST localhost:3000/books`
 
 Create a new book, status=201
+
 Parameters information:
 
 ```
@@ -107,6 +109,7 @@ Parameters information:
 `PUT localhost:3000/books/:id`
 
 Edit a book, status=202
+
 Parameters information:
 
 ```
