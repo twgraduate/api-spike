@@ -1,4 +1,5 @@
 # **API Basic**
+
 * Get all books information list:                 GET       /books
 * Read a book detailed information by book i      GET       /books/:id
 * Add a book to the list                          POST      /book
@@ -7,12 +8,15 @@
 
 ***
 # **API error**
+
 When an error occured, HTTP Status Code is 404,422,500.
+
 Layout of error:
- ```{
+```{
         'msg':'error message'
     }
- ```
+```
+
 * 404:  Book not found;
 * 422:  Some parameters are illegal, book entity is unprocessable;
 * 500:  other error
@@ -30,8 +34,11 @@ Layout of error:
 
 ***
 # **Get books list**
+
 '`GET localhost:3000/books`
+
 Return books list, status=200
+
  ```[
     {
       "id": 1,
@@ -57,7 +64,9 @@ Return books list, status=200
 ***
 # **Get a book message**
 `GET  /books/:id`
+
 Return a book's information,status=200
+
 ```
     {
     "id": 2,
@@ -73,7 +82,9 @@ Return a book's information,status=200
 ***
 # **Post a new book**
 `POST localhost:3000/books`
+
 Create a new book, status=201
+
 Parameters information:
  ```{
        book[name]:Rail之道
@@ -88,7 +99,9 @@ Parameters information:
 ***
 # **Edit a book**
 `PUT localhost:3000/books/:id`
+
 Edit a book, status=202
+
 Parameters information:
  ```{
        book[name]:Rail之道
@@ -102,7 +115,9 @@ Parameters information:
 
 ***
 # **Destroy a book**
+
 `DELETE localhost:3000/books/:id`
+
 Delete a book, status=200
 
 
