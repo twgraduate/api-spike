@@ -1,4 +1,5 @@
 # *API Basic*
+|-------------------------------------------------|:------:|-----------
 | Get all books information list:                 |GET     |/books
 | Read a book detailed information by book i      |GET     |/books/:id
 | Add a book to the list                          |POST    |/book
@@ -16,15 +17,15 @@ Layout of error:
 * 422:  Some parameters are illegal, book entity is unprocessable;
 * 500:  other error
 
-|Error Message                   |Status Code        |     Error describe
-|--------------------------------|:-----------------:|-------------------------------------------------------------------------
-|Book not found                  |    404            | {:id} don't refers to any book
-|Exception                       |    500            | Other error
-|Book name can't be empty        |    422            | The book name in your parameters is empty
-|Name&&author of two books……     |    422            | The book you POST or PUT has the same name and author with books in SQL
-|Author can't be empty           |    422            | The book author in your parameters is empty
-|Isbn can't be empty             |    422            | The book isbn in your parameters is empty
-|Isbn should be unique           |    422            |The book you POST or PUT has the same ISBN with other books in SQL
+|Error Message                          |Status Code        |     Error describe
+|---------------------------------------|:-----------------:|-------------------------------------------------------------------------
+|Book not found                         |    404            | {:id} don't refers to any book
+|Exception                              |    500            | Other error
+|Book name can't be empty               |    422            | The book name in your parameters is empty
+|Name&&author can't be same at same time|    422            | The book you POST or PUT has the same name and author with books in SQL
+|Author can't be empty                  |    422            | The book author in your parameters is empty
+|Isbn can't be empty                    |    422            | The book isbn in your parameters is empty
+|Isbn should be unique                  |    422            |The book you POST or PUT has the same ISBN with other books in SQL
 
 
 ***
