@@ -91,7 +91,7 @@ Return a book's information,status=200
 
 `POST /books`
 
-Create a new book, needs confirmed, status=201
+Create a new book, needs verification, status=201
 
 Parameters information:
 
@@ -113,7 +113,7 @@ Data:
 
 `PUT /books/:isbn`
 
-Edit a book. Only price,img_url,description can be changed.Confirm is needed when you make these changes, status=202
+Edit a book. Only price,img_url,description can be changed.Verification is needed when you make these changes, status=202
 
 Parameters information:
 
@@ -134,7 +134,7 @@ Data:
 
 `Authorization header: username = &password = `
 
-Delete a book, needs confirmed, status=200
+Delete a book, needs verification, status=200
 
 
 
