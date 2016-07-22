@@ -6,6 +6,8 @@
 * Edit detail information by book id:              PUT       /book/:isbn
 * Delete book information by book id:              DELETE    /book/:isbn
 
+When you POST/PUT?DELETE, username&password is needed, they are assigined in the authorization header.
+
 ***
 # **API error**
 
@@ -52,6 +54,7 @@ Return books list, without id&describe, status=200
           "author": "(美)Obie Fernandez",
           "price": 89,
           "img_url": "https://img3.doubanio.com/mpic/s4282672.jpg",
+          "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
         },
         {
           "name": "Programming Ruby中文版",
@@ -59,6 +62,7 @@ Return books list, without id&describe, status=200
           "author": "托马斯",
           "price": 99,
           "img_url": "https://img3.doubanio.com/mpic/s2370875.jpg",
+          "description": "《Programming Rudy》(中文版)(第2版)是……"
         }
     ]
 }
@@ -73,7 +77,6 @@ Return a book's information,status=200
 
 ```
 {
-    "id":2,
     "name": "Programming Ruby中文版",
     "isbn": "2032343",
     "author": "托马斯",
@@ -88,18 +91,20 @@ Return a book's information,status=200
 
 `POST /books`
 
-Create a new book, status=201
+Create a new book, needs confirmed, status=201
 
 Parameters information:
 
 ```
+Authorization header: username = &password = 
+Data:
 {
-   book[name]:Rail之道
-   book[isbn]:4727011
-   book[author]:(美)Obie Fernandez
-   book[price]:89
-   book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
-   book[description]:《Rails之道》按照Rails的各...
+    "name": "Rails之道",
+    "isbn": "4727011",
+    "author": "(美)Obie Fernandez",
+    "price": 89,
+    "img_url": "https://img3.doubanio.com/mpic/s4282672.jpg"
+    "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
 }
 ```
 
@@ -108,18 +113,17 @@ Parameters information:
 
 `PUT /books/:isbn`
 
-Edit a book, status=202
+Edit a book. Only price,img_url,description can be changed.Confirm is needed when you make these changes, status=202
 
 Parameters information:
 
 ```
+Authorization header: username = &password = 
+Data:
 {
-   book[name]:Rail之道
-   book[isbn]:4727011
-   book[author]:(美)Obie Fernandez
-   book[price]:89
-   book[img_url]:https://img3.doubanio.com/mpic/s4282672.jpg
-   book[description]:《Rails之道》按照Rails的各...
+    "price": 89,
+    "img_url": "https://img3.doubanio.com/mpic/s4282672.jpg"
+    "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
 }
 ```
 
@@ -128,7 +132,9 @@ Parameters information:
 
 `DELETE /books/:isbn`
 
-Delete a book, status=200
+`Authorization header: username = &password = `
+
+Delete a book, needs confirmed, status=200
 
 
 
