@@ -1,10 +1,10 @@
 # **API Basic**
 
 * Get all books information list:                  GET       /books
-* Read a book detailed information by book i:      GET       /books/:isbn
+* Read a book detailed information by book isbn:      GET       /books/:isbn
 * Add a book to the list:                          POST      /book
-* Edit detail information by book id:              PUT       /book/:isbn
-* Delete book information by book id:              DELETE    /book/:isbn
+* Edit detail information by book isbn:              PUT       /book/:isbn
+* Delete book information by book isbn:              DELETE    /book/:isbn
 
 When you POST/PUT?DELETE, username&password is needed, they are assigined in the authorization header.
 
@@ -17,7 +17,8 @@ Layout of error:
 
 ```
 {
-    'msg':'error message'
+    'msg':'error message',
+    'code':'error code'
 }
 ```
 
@@ -43,7 +44,7 @@ Layout of error:
 
 `GET /books`
 
-Return books list, without id&describe, status=200
+Return books list, status=200
 
 ```
 {
@@ -91,12 +92,14 @@ Return a book's information,status=200
 
 `POST /books`
 
-Create a new book, needs verification, status=201
+Create a new book, needs verification.
+POST succeed status=201; Login error, status = 401; Params validate, status = 409
 
 Parameters information:
 
 ```
-Authorization header: username = &password = 
+request.Headers.Add(HttpRequestHeader.Authorization, "");
+
 Data:
 {
     "name": "Rails之道",
@@ -108,22 +111,69 @@ Data:
 }
 ```
 
+if POST succeed, it would return:
+```
+{
+  "msg": "Create a new book",
+  "code": "201"
+}
+```
+
+if login error, it would return
+```
+{
+  "msg": "username or password is error",
+  "code": "401"
+}
+```
+if params is valid, it would return
+```
+{
+  "msg": "error message",
+  "code": "409"
+}
+```
+
+
 ***
 # **Edit a book**
 
 `PUT /books/:isbn`
 
-Edit a book. Only price,img_url,description can be changed.Verification is needed when you make these changes, status=202
+Edit a book. Only price,img_url,description can be changed.Verification is needed when you make these changes.
+PUT succeed, status=202; Login error, status = 401; Params validate, status = 409
 
 Parameters information:
 
 ```
-Authorization header: username = &password = 
+request.Headers.Add(HttpRequestHeader.Authorization, "");
+
 Data:
 {
     "price": 89,
     "img_url": "https://img3.doubanio.com/mpic/s4282672.jpg"
     "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
+}
+```
+if PUT succeed, it would return:
+```
+{
+  "msg": "Book updated",
+  "code": "202"
+}
+```
+if login error, it would return
+```
+{
+  "msg": "username or password is error",
+  "code": "401"
+}
+```
+if params is valid, it would return
+```
+{
+  "msg": "error message",
+  "code": "409"
 }
 ```
 
@@ -132,10 +182,24 @@ Data:
 
 `DELETE /books/:isbn`
 
-`Authorization header: username = &password = `
+`request.Headers.Add(HttpRequestHeader.Authorization, "");`
 
-Delete a book, needs verification, status=200
+Delete a book, needs verification. If succeed, status=200; If login error, status=401.
 
+if login error, it would return
+```
+{
+  "msg": "username or password is error",
+  "code": "401"
+}
+```
+if DELETE succeed, it would return:
+```
+{
+  "msg": "Book deleted",
+  "code": "200"
+}
+```
 
 
 
