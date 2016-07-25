@@ -6,7 +6,7 @@
 * Edit detail information by book isbn:              PUT       /book/:isbn
 * Delete book information by book isbn:              DELETE    /book/:isbn
 
-When you POST/PUT?DELETE, username&password is needed, they are assigined in the authorization header.
+When you POST/PUT/DELETE, username&password is needed, they are assigined in the authorization header.
 
 ***
 # **API error**
