@@ -17,8 +17,7 @@ Layout of error:
 
 ```
 {
-    'msg':'error message',
-    'code':'error code'
+    'msg':'error message'
 }
 ```
 
@@ -111,26 +110,23 @@ Data:
 }
 ```
 
-if POST succeed, it would return:
+if POST succeed, status = 201, response message should be:
 ```
 {
-  "msg": "Create a new book",
-  "code": "201"
+  "msg": "Create a new book"
 }
 ```
 
-if login error, it would return
+if login error, status = 401, response message should be:
 ```
 {
-  "msg": "username or password is error",
-  "code": "401"
+  "msg": "username or password is error"
 }
 ```
-if params is valid, it would return
+if params is valid, status = 409, response message should be:
 ```
 {
-  "msg": "error message",
-  "code": "409"
+  "msg": "error message"
 }
 ```
 
@@ -155,25 +151,22 @@ Data:
     "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
 }
 ```
-if PUT succeed, it would return:
+if PUT succeed, status = 202, response message should be:
 ```
 {
-  "msg": "Book updated",
-  "code": "202"
+  "msg": "Book updated"
 }
 ```
-if login error, it would return
+if login error, status = 401, response message should be:
 ```
 {
-  "msg": "username or password is error",
-  "code": "401"
+  "msg": "username or password is error"
 }
 ```
-if params is valid, it would return
+if params is valid, status = 409, response message should be:
 ```
 {
-  "msg": "error message",
-  "code": "409"
+  "msg": "error message"
 }
 ```
 
@@ -186,18 +179,16 @@ if params is valid, it would return
 
 Delete a book, needs verification. If succeed, status=200; If login error, status=401.
 
-if login error, it would return
+if login error, status = 401, response message should be:
 ```
 {
-  "msg": "username or password is error",
-  "code": "401"
+  "msg": "username or password is error"
 }
 ```
-if DELETE succeed, it would return:
+if DELETE succeed, status = 200, response message should be:
 ```
 {
-  "msg": "Book deleted",
-  "code": "200"
+  "msg": "Book deleted"
 }
 ```
 
