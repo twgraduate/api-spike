@@ -36,6 +36,7 @@ Layout of error:
 |Author can't be empty                  |    409            | {book[author]} in your parameters is empty
 |Isbn can't be empty                    |    409            | {book[isbn]} in your parameters is empty
 |Book name can't be empty               |    409            | {book[name]} in your parameters is empty
+|Price should be a number               |    409            | {book[price]} is not a number
 |Exception                              |    500            | Internal Server Error
 
 ***
