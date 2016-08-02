@@ -27,17 +27,17 @@ Layout of error:
 * 500:  Other error
 
 
-|Error Message                              |Status Code        |     Error describe
-|-------------------------------------------|:-----------------:|--------------------------------------------
-|Access denied                              |    401            | :username or :password is error
-|Book not found                             |    404            | {:id} don't refers to any book
-|Name and author can't be same at same time |    409            | Book name&author conflict
-|Isbn should be unique                      |    409            | ISBN conflict
-|Author can't be empty                      |    409            | {book[author]} in your parameters is empty
-|Isbn can't be empty                        |    409            | {book[isbn]} in your parameters is empty
-|Book name can't be empty                   |    409            | {book[name]} in your parameters is empty
-|Price should be a number                   |    409            | {book[price]} is not a number
-|Exception                                  |    500            | Internal Server Error
+|Error Message                                |Status Code        |     Error describe
+|---------------------------------------------|:-----------------:|--------------------------------------------
+|username or password is error                |    401            | :username or :password is error
+|Book not found                               |    404            | {:id} don't refers to any book
+|Name and author can not be same at same time |    409            | Book name&author conflict
+|Isbn should be unique                        |    409            | ISBN conflict
+|Author can not be empty                      |    409            | {book[author]} in your parameters is empty
+|Isbn can not be empty                        |    409            | {book[isbn]} in your parameters is empty
+|Book name can not be empty                   |    409            | {book[name]} in your parameters is empty
+|Price should be a number                     |    409            | {book[price]} is not a number
+|Exception                                    |    500            | Internal Server Error
 
 ***
 # **Get books list**
