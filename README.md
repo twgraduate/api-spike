@@ -93,7 +93,7 @@ Return a book's information,status=200
 `POST /books`
 
 Create a new book, needs verification.
-POST succeed status=201; Login error, status = 401; Params validate, status = 400
+POST succeed status=200; Login error, status = 401; Params validate, status = 400
 
 Parameters information:
 
@@ -111,7 +111,7 @@ Data:
 }
 ```
 
-if POST succeed, status = 201, response message should be:
+if POST succeed, status = 200, response message should be:
 ```
 {
   "msg": "Create a new book"
@@ -138,7 +138,7 @@ if params is valid, status = 400, response message should be:
 `PUT /books/:isbn`
 
 Edit a book. Only price,img_url,description can be changed.Verification is needed when you make these changes.
-PUT succeed, status=202; Login error, status = 401; Params validate, status = 400
+PUT succeed, status=200; Login error, status = 401; Params validate, status = 400
 
 Parameters information:
 
@@ -152,7 +152,7 @@ Data:
     "description": "《Rails之道》按照Rails的各个子系统进行组织编排……"
 }
 ```
-if PUT succeed, status = 202, response message should be:
+if PUT succeed, status = 200, response message should be:
 ```
 {
   "msg": "Book updated"
