@@ -11,7 +11,7 @@ When you POST/PUT/DELETE, username&password is needed, they are assigined in the
 ***
 # **API error**
 
-When an error occured, HTTP Status Code is 401,404,409,500.
+When an error occured, HTTP Status Code is 401,404,400,500.
 
 Layout of error:
 
@@ -23,7 +23,7 @@ Layout of error:
 
 * 401:  Access denied;
 * 404:  Book not found;
-* 409:  Parameters conflict;
+* 400:  Parameters conflict;
 * 500:  Other error
 
 
@@ -31,12 +31,12 @@ Layout of error:
 |---------------------------------------------|:-----------------:|--------------------------------------------
 |username or password is error                |    401            | :username or :password is error
 |Book not found                               |    404            | {:id} don't refers to any book
-|Name and author can not be same at same time |    409            | Book name&author conflict
-|Isbn should be unique                        |    409            | ISBN conflict
-|Author can not be empty                      |    409            | {book[author]} in your parameters is empty
-|Isbn can not be empty                        |    409            | {book[isbn]} in your parameters is empty
-|Book name can not be empty                   |    409            | {book[name]} in your parameters is empty
-|Price should be a number                     |    409            | {book[price]} is not a number
+|Name and author can not be same at same time |    400            | Book name&author conflict
+|Isbn should be unique                        |    400            | ISBN conflict
+|Author can not be empty                      |    400            | {book[author]} in your parameters is empty
+|Isbn can not be empty                        |    400            | {book[isbn]} in your parameters is empty
+|Book name can not be empty                   |    400            | {book[name]} in your parameters is empty
+|Price should be a number                     |    400            | {book[price]} is not a number
 |Exception                                    |    500            | Internal Server Error
 
 ***
@@ -93,7 +93,7 @@ Return a book's information,status=200
 `POST /books`
 
 Create a new book, needs verification.
-POST succeed status=201; Login error, status = 401; Params validate, status = 409
+POST succeed status=201; Login error, status = 401; Params validate, status = 400
 
 Parameters information:
 
@@ -124,7 +124,7 @@ if login error, status = 401, response message should be:
   "msg": "username or password is error"
 }
 ```
-if params is valid, status = 409, response message should be:
+if params is valid, status = 400, response message should be:
 ```
 {
   "msg": "error message"
@@ -138,7 +138,7 @@ if params is valid, status = 409, response message should be:
 `PUT /books/:isbn`
 
 Edit a book. Only price,img_url,description can be changed.Verification is needed when you make these changes.
-PUT succeed, status=202; Login error, status = 401; Params validate, status = 409
+PUT succeed, status=202; Login error, status = 401; Params validate, status = 400
 
 Parameters information:
 
@@ -164,7 +164,7 @@ if login error, status = 401, response message should be:
   "msg": "username or password is error"
 }
 ```
-if params is valid, status = 409, response message should be:
+if params is valid, status = 400, response message should be:
 ```
 {
   "msg": "error message"
